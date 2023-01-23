@@ -35,6 +35,9 @@ public class PlatformMovement : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, target, speed*Time.deltaTime);//Move towards the targeted Point
     }
 
+
+    #region PlayerInteraction
+    
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player")) //if player is on the platform
@@ -50,4 +53,5 @@ public class PlatformMovement : MonoBehaviour
             other.transform.parent = null;//make the player no longer be part of the platform
         }                                   //now the player moves freely no matter what the platform does
     }
+    #endregion
 }
